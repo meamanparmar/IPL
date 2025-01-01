@@ -1,53 +1,42 @@
 package com.wecp.progressive.dao;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
+ 
+import com.wecp.progressive.entity.Cricketer;
 import java.sql.SQLException;
 import java.util.List;
-
-import com.wecp.progressive.config.DatabaseConnectionManager;
-import com.wecp.progressive.entity.Cricketer;
-
-public class CricketerDAOImpl implements CricketerDAO{
-
+ 
+public class CricketerDAOImpl implements CricketerDAO {
+ 
     @Override
-    public int addCricketer(Cricketer cricketer) throws SQLException{
-        Connection connection = null;
-        PreparedStatement statement = null;
-        int generatedID=-1;
-        try{
-            connection = DatabaseConnectionManager.getConnection();
-            String sql =  "INSERT INTO cricketer (cricketer_id , team_id , cricketer_name , age,nationality,experience,role,total_runs,total_wickets) VALUES(?,?,?,?,?,?,?,?,?)";
-            statement=connection.prepareStatement(sql,PreparedStatement.RETURN_GENERATED_KEYS);
-            statement.setInt(1,cricketer.getTeamById());
-            
-
-        }
+    public int addCricketer(Cricketer cricketer) throws SQLException {
+        // Implement the logic to add a cricketer
+        // Return the generated cricketer ID or -1 if insertion fails
+        return -1; // Placeholder
     }
-
+ 
     @Override
-    public int addCricketer(Cricketer cricketer) {
-        return -1;
+    public Cricketer getCricketerById(int cricketerId) throws SQLException {
+        // Implement the logic to get a cricketer by ID
+        // Return the Cricketer object or null if not found
+        return null; // Placeholder
     }
-
+ 
     @Override
-    public Cricketer getCricketerById(int cricketerId) {
-        return null;
+    public void updateCricketer(Cricketer cricketer) throws SQLException {
+        // Implement the logic to update the cricketer information
+        // Void method, no return
     }
-
+ 
     @Override
-    public void updateCricketer(Cricketer cricketer) {
-        
+    public void deleteCricketer(int cricketerId) throws SQLException {
+        // Implement the logic to delete a cricketer by ID
+        // Void method, no return
     }
-
+ 
     @Override
-    public void deleteCricketer(int cricketerId) {
-       
+    public List<Cricketer> getAllCricketers() throws SQLException {
+        // Implement the logic to get all cricketers
+        // Return a list of cricketers or an empty list if no records
+        return null; // Placeholder
     }
-
-    @Override
-    public List<Cricketer> getAllCricketers() {
-        return null;
-    }
-
 }
+ 
