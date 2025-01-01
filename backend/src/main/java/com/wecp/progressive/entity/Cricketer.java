@@ -100,6 +100,9 @@ public class Cricketer {
     public void setTotalWickets(int totalWickets) {
         this.totalWickets = totalWickets;
     }
+    public static Comparator<Cricketer> compareByExperience(){
+        return (c1,c2) -> Integer.compare(c2.getExperience(), c1.getExperience());
+    }
     
     
  

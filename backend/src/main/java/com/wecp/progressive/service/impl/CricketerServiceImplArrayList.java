@@ -1,5 +1,6 @@
 package com.wecp.progressive.service.impl;
 
+
 import java.util.List;
 
 import com.wecp.progressive.entity.Cricketer;
@@ -63,24 +64,42 @@ import com.wecp.progressive.service.CricketerService;
 import java.util.ArrayList;
 import java.util.List;
  
-public class CricketerServiceImplArraylist implements CricketerService {
+public class CricketerServiceImplArrayList {
  
-    private List<Cricketer> cricketers = new ArrayList<>();
+    private List<Cricketer> cricketers;
  
-    @Override
+    public CricketerServiceImplArrayList() {
+        this.cricketers = new ArrayList<>();
+    }
+ 
     public List<Cricketer> getAllCricketers() {
         return cricketers;
     }
  
-    @Override
-    public Integer addCricketer(Cricketer cricketer) {
-        cricketers.add(cricketer);
-        return cricketer.getCricketerId(); // Assuming Cricketer has a getId() method.
+    public Cricketer getCricketerById(int cricketerId) {
+        for (Cricketer cricketer : cricketers) {
+            if (cricketer.getCricketerId() == cricketerId) {
+                return cricketer;
+            }
+        }
+        return null; // Return null if no cricketer is found
     }
  
-    @Override
+    public Integer addCricketer(Cricketer cricketer) {
+        cricketers.add(cricketer);
+        return cricketer.getCricketerId();
+    }
+ 
     public List<Cricketer> getAllCricketersSortedByExperience() {
-        // Placeholder for sorting logic
-        return cricketers; // Assuming the sorting is done elsewhere.
+        cricketers.sort((c1, c2) -> Integer.compare(c2.getExperience(), c1.getExperience()));
+        return cricketers;
+    }
+ 
+    public void deleteCricketer(int cricketerId) {
+        cricketers.removeIf(cricketer -> cricketer.getCricketerId() == cricketerId);
+    }
+    public List<Cricketer> getCricketersSortedByExperience(){
+        cricketers.sort(((Cricketer) cricketers).compareByExperience());
+        return cricketers;
     }
 }
