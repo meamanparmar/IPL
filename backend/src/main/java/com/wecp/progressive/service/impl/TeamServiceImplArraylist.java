@@ -6,7 +6,7 @@ import java.util.List;
  
 import com.wecp.progressive.entity.Team;
 import com.wecp.progressive.service.TeamService;
- 
+
 public class TeamServiceImplArraylist implements TeamService {
  
     private List<Team> teamList = new ArrayList<>();
