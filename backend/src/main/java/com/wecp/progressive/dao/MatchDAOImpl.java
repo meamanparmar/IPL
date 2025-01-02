@@ -1,36 +1,30 @@
 package com.wecp.progressive.dao;
  
-import com.wecp.progressive.entity.Match;
-import java.sql.SQLException;
 import java.util.List;
  
-public class MatchDAOImpl implements MatchDAO {
+import com.wecp.progressive.entity.Match;
+ 
+public class MatchDAOImpl implements MatchDAO{
  
     @Override
-    public int addMatch(Match match) throws SQLException {
-        // Placeholder return
-        return -1;
+    public int addMatch(Match match) {
+        return -1;  }
+ 
+    @Override
+    public Match getMatchById(int matchId) {
+      return null;
     }
  
     @Override
-    public Match getMatchById(int matchId) throws SQLException {
-        // Placeholder return
-        return null;
-    }
+    public void updateMatch(Match match) {
+       }
  
     @Override
-    public void updateMatch(Match match) throws SQLException {
-        // No return
-    }
+    public void deleteMatch(int matchId) {
+     }
  
     @Override
-    public void deleteMatch(int matchId) throws SQLException {
-        // No return
-    }
+    public List<Match> getAllMatches() {
+      return List.of();}
  
-    @Override
-    public List<Match> getAllMatches() throws SQLException {
-        // Placeholder return
-        return null;
-    }
 }

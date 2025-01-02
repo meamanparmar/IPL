@@ -1,5 +1,6 @@
 package com.wecp.progressive.entity;
  
+
 public class User {
     private int userId;
     private String fullName;
@@ -53,7 +54,5 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
-
     
- 
 }

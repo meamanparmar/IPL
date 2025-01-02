@@ -2,6 +2,7 @@ package com.wecp.progressive.entity;
  
 import java.util.Date;
  
+
 public class Match {
     private int matchId;
     private int firstTeamId;
@@ -72,8 +73,5 @@ public class Match {
     public void setWinnerTeamId(int winnerTeamId) {
         this.winnerTeamId = winnerTeamId;
     }
-
-    
- 
     
 }
